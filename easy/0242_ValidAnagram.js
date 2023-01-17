@@ -27,12 +27,33 @@ Link: https://leetcode.com/problems/valid-anagram/description/
 // Solution with sorting - O(n*log(n))
 // Runtime: Beats ~40%
 // Memory: Beats: 25.5%
-var isAnagram = function(s, t) {
+var isAnagramSort = function(s, t) {
     s = s.split('').sort().join('');
     t = t.split('').sort().join('');
 
     if(s==t)
         return true
     return false
+};
+
+// More efficient solution
+// Time: O(n); Space: O(1)
+// Runtime: Beats 93.4%
+// Memory: Beats: 96.9%
+var isAnagram = function(s, t) {
+    if(s.length !== t.length) 
+        return false
+
+    let counter = new Array(26).fill(0)
+    for(let i=0; i<s.length; i++) {
+        counter[s.charCodeAt(i)-97]++
+        counter[t.charCodeAt(i)-97]--
+    }
+
+    for(let i=0; i<26; i++) {
+        if(counter[i] != 0)
+            return false
+    }
+    return true
 };
 
