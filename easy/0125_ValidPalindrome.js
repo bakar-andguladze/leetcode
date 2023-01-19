@@ -26,3 +26,36 @@ s consists only of printable ASCII characters.
 Link: https://leetcode.com/problems/valid-palindrome/description/
 */
 
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    s=s.toLowerCase()
+    let leftPointer = 0
+    let rightPointer = s.length - 1
+
+    while(leftPointer < rightPointer) {
+        while(leftPointer < rightPointer && !isAlphanumeric(s[leftPointer])) 
+            leftPointer++
+        while(leftPointer < rightPointer && !isAlphanumeric(s[rightPointer]))
+            rightPointer--
+        
+        if(s[leftPointer] != s[rightPointer])
+            return false
+        leftPointer++
+        rightPointer--
+    }
+    return true
+};
+
+var isAlphanumeric = function(c) {
+    charCode = c.charCodeAt()
+    return (charCode >= 48 && charCode <= 57) || (charCode >= 97 && charCode <= 122)
+}
+
+// Test
+const s = ",."
+const result = isPalindrome(s)
+console.log(result)
+
