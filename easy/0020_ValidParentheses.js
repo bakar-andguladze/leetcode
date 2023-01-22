@@ -28,6 +28,12 @@ s consists of parentheses only '()[]{}'.
 Link: https://leetcode.com/problems/valid-parentheses/
 */
 
+/* 
+Complexity: Time: O(n); Space: O(n)
+Runtime: beats 71.38%
+Memory: beats 38%
+*/
+
 /**
  * @param {string} s
  * @return {boolean}
@@ -66,4 +72,5 @@ var isOpener = function(c) {
 
 let sample = "([}}])"
 console.log(isValid(sample))
+
 
