@@ -46,3 +46,26 @@ var twoSumBruteForce = function(nums, target) {
     return 0
 };
 
+var twoSumHashTable = function(nums, target) {
+    let map = {}
+
+    for(let i=0; i<nums.length; i++) {
+        let num = nums[i]
+        let potentialMatch = target - num
+        if (map[potentialMatch] >= 0) {
+            return [i, map[potentialMatch]]
+        } 
+        else {
+            map[num] = i
+            console.log(map[num])
+        }
+    }
+}
+
+const nums = [2, 5, 19, 4] 
+const target = 7
+
+const result1 = twoSumBruteForce(nums, target)
+const result2 = twoSumHashTable(nums, target)
+
+console.log(`result1 = ${result1} \n result2 = ${result2}`)
