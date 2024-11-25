@@ -66,7 +66,7 @@ var twoSumHashTable = function(nums, target) {
     }
 }
 
-const nums = [2, 5, 19, 4] 
+const nums = [2, 5, 19, 6] 
 const target = 7
 
 const result1 = twoSumBruteForce(nums, target)
