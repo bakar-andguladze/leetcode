@@ -23,7 +23,7 @@ Link: https://leetcode.com/problems/binary-tree-level-order-traversal/
 */
 
 /**
- * @param {TreeNode} root
+ * @param {TreeNode} root 
  * @return {number[][]}
  */
 var levelOrder = function(root) {
