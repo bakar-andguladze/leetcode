@@ -10,7 +10,7 @@ https://leetcode.com/problems/first-bad-version/
  * @param {integer} version number
  * @return {boolean} whether the version is bad
  * isBadVersion = function(version) {
- *     ...
+ *   ...
  * };
  */
 
