@@ -36,8 +36,12 @@ https://leetcode.com/problems/two-sum/description/
  * @return {number[]}
  */
 
-// Time Complexity - O(n*n)
-// Space Complexity - constant
+/*
+Brute Force Approach
+Time Complexity - O(n*n)
+Space Complexity - constant
+*/
+
 var twoSumBruteForce = function(nums, target) {
     for(let i=0; i<nums.length; i++) {
         for(let j=i+1; j<nums.length; j++) {
@@ -48,8 +52,10 @@ var twoSumBruteForce = function(nums, target) {
     return 0
 };
 
-// Time Complexity - O(n*log(n))
-// Space Complexity - O(n)
+/*
+Time Complexity - O(n)
+Space Complexity - O(n)
+*/
 var twoSumHashTable = function(nums, target) {
     let map = {}
 
