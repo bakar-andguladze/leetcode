@@ -70,6 +70,29 @@ var twoSumHashTable = function(nums, target) {
             console.log(map[num])
         }
     }
+    return 0;
+}
+
+/*
+Time Complexity - O(nlogn)
+Space Complexity - O(1)
+Note: This solution sorts the array, which changes the original order of elements. 
+If the order of elements matters, this approach is not suitable. 
+*/
+var twoSumSorted = function(nums, target) {
+    nums.sort((a, b) => a - b);
+    let left = 0;
+    let right = nums.length - 1;
+    while(left < right) {
+        let sum = nums[left] + nums[right]
+        if(sum == target)
+            return [nums[left], nums[right]]
+        else if(sum < target)
+            left++;
+        else
+            right--;
+    }
+    return 0;
 }
 
 const nums = [2, 5, 19, 4] 
@@ -77,5 +100,6 @@ const target = 7
 
 const result1 = twoSumBruteForce(nums, target)
 const result2 = twoSumHashTable(nums, target)
+const result3 = twoSumSorted(nums, target)
 
-console.log(`result1 = ${result1} \n result2 = ${result2}`)
+console.log(`result1 = ${result1} \n result2 = ${result2} \n result3 = ${result3}`)
