@@ -33,3 +33,19 @@ Constraints:
     -109 <= nums1[i], nums2[j] <= 109
 */
 
+var merge = function(nums1, m, nums2, n) {
+    let p1 = m-1, p2 = nums1.length - 1;
+    let pp = nums2.length - 1
+
+    while(pp>=0) {
+        if(nums1[p1] >= nums2[pp]) {
+            nums1[p2] = nums1[p1]
+            p1--
+        }
+        else {
+            nums1[p2] = nums2[pp]
+            pp--
+        }
+        p2--
+    }
+};
