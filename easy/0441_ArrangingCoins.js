@@ -20,3 +20,22 @@ Constraints:
 Link: https://leetcode.com/problems/arranging-coins/description/
 */
 
+/**
+ * @param {number} n
+ * @return {number}
+ */
+// Approach 1 - Brute Force
+// Time Complexity - O(n)
+var arrangeCoins = function(n) {
+    let rows = 0;
+    let coinsInRow = 1
+    while(n >= 0) {
+        n -= coinsInRow
+        rows++
+        coinsInRow++
+    }
+    if(n<0)
+        return rows-1
+    return rows
+};
+
