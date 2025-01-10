@@ -42,3 +42,7 @@ var isUgly = function(n) {
     return n == 1
 };
 
+
+// Test Cases
+console.log(isUgly(6)) // true  // 6 = 2 * 3
+console.log(isUgly(1)) // true  // 1 has no prime factors.
